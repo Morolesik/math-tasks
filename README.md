@@ -1,50 +1,39 @@
-# MathTasks — Educational Platform for Kids
+# Welcome to Buffalo
 
-MathTasks is a small educational platform for publishing math problems for children and tracking their learning progress.  
-The project is built as a backend service with a simple web interface and API.
+Thank you for choosing Buffalo for your web development needs.
 
-This project is part of my Go developer portfolio.
+## Database Setup
 
----
+It looks like you chose to set up your application using a database! Fantastic!
 
-## 🧩 Features
+The first thing you need to do is open up the "database.yml" file and edit it to use the correct usernames, passwords, hosts, etc... that are appropriate for your environment.
 
-- Create, edit, and delete math tasks (full CRUD)
-- Difficulty levels: easy, medium, hard
-- Task classification by school grade (1–12)
-- REST API for managing tasks
-- Simple web interface (planned)
-- (Planned) Telegram bot integration for sending daily tasks
-- (Planned) User accounts and progress tracking
+You will also need to make sure that **you** start/install the database of your choice. Buffalo **won't** install and start it for you.
 
----
+### Create Your Databases
 
-## 🛠️ Technologies
+Ok, so you've edited the "database.yml" file and started your database, now Buffalo can create the databases in that file for you:
 
-- Language: **Go**
-- Framework: **Buffalo**
-- Database: **PostgreSQL**
-- API style: **REST**
-- Other: **Docker**, **docker-compose**
+```console
+buffalo pop create -a
+```
 
----
+## Starting the Application
 
-## 🗄️ Data Model (Task)
+Buffalo ships with a command that will watch your application and automatically rebuild the Go binary and any assets for you. To do that run the "buffalo dev" command:
 
-Each task contains:
+```console
+buffalo dev
+```
 
-- `id` — unique identifier
-- `title` — short task title
-- `description` — full problem description
-- `solution` — correct answer or explanation
-- `difficulty` — `easy | medium | hard`
-- `grade` — school grade (1–12)
-- `created_at`
-- `updated_at`
+If you point your browser to [http://127.0.0.1:3000](http://127.0.0.1:3000) you should see a "Welcome to Buffalo!" page.
 
----
+**Congratulations!** You now have your Buffalo application up and running.
 
-## 🚀 How to Run (Local Development)
+## What Next?
 
+We recommend you heading over to [http://gobuffalo.io](http://gobuffalo.io) and reviewing all of the great documentation there.
 
+Good luck!
 
+[Powered by Buffalo](http://gobuffalo.io)
