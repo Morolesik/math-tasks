@@ -1,0 +1,35 @@
+<h1>Tasks</h1>
+
+<p>
+  <a href="<%= newTasksPath() %>" class="btn btn-primary">New Task</a>
+</p>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Difficulty</th>
+    <th>Grade</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <%= for (task) in tasks { %>
+  <tr>
+    <td><%= task.Title %></td>
+    <td><%= task.Description %></td>
+    <td><%= task.Difficulty %></td>
+    <td><%= task.Grade %></td>
+    <td>
+      <a href="<%= taskPath({task_id: task.ID}) %>" class="btn btn-sm btn-info">View</a>
+      <a href="<%= editTaskPath({task_id: task.ID}) %>" class="btn btn-sm btn-warning">Edit</a>
+
+      <%= form_for(task, {action: taskPath({task_id: task.ID}), method: "DELETE", class: "d-inline"}) { %>
+      <button class="btn btn-sm btn-danger" role="submit" onclick="return confirm('Are you sure?')">Destroy</button>
+      <% } %>
+    </td>
+  </tr>
+  <% } %>
+  </tbody>
+</table>

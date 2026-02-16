@@ -1,0 +1,9 @@
+create_table("tasks") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("title", "string", {})
+	t.Column("description", "text", {})
+	t.Column("solution", "text", {})
+	t.Column("difficulty", "string", {})
+	t.Column("grade", "integer", {})
+	t.Timestamps()
+}
